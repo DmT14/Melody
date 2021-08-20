@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Bebas Neue Book";
+  src: local("Bebas Neue Book Regular"), local("BebasNeueBook"),
+    url("../fonts/BebasNeueBook.woff2") format("woff2"),
+    url("../fonts/BebasNeueBook.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box; /* правильно считать ширину и высоту элементов */
 }
@@ -56,4 +66,68 @@ body {
   line-height: 20px; /* высота строки */
   text-decoration: none; /* убрать подчёркивание текста */
   color: #fff; /* цвет текста */
+}
+
+.main {
+  max-width: 1280px;
+  margin: auto;
+  padding-top: 54px;
+  display: flex;
+}
+
+.main-info {
+  flex-grow: 1; /* блок занял всё оставшееся место */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-image path {
+  opacity: 0; /* прозрачность */
+  cursor: pointer; /* курсор в виде пальца */
+}
+
+.home-image path:hover {
+  opacity: 1; /* прозрачность */
+}
+
+.counter-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter-button {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.counter-arrow-down {
+  transform: rotateX(180deg); /* поворот по оси X на 180 градусов */
+}
+
+.main-title {
+  font-family: "Bebas Neue Book", sans-serif;
+  font-size: 37px;
+  line-height: 44px;
+  color: #635854;
+}
+
+.counter {
+  font-family: "Bebas Neue Book", sans-serif;
+  color: #635854;
+  font-size: 124px;
+  margin: 10px 0px;
+}
+
+.button-primary {
+  background: #3596f5;
+  border-radius: 6px;
+  color: #fff;
+  border: none;
+  padding: 16px 36px;
+  cursor: pointer;
 }
