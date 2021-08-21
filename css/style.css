@@ -93,6 +93,10 @@ body {
   opacity: 1; /* прозрачность */
 }
 
+path.current-floor {
+  opacity: 1;
+}
+
 .counter-group {
   display: flex;
   flex-direction: column;
@@ -130,4 +134,115 @@ body {
   border: none;
   padding: 16px 36px;
   cursor: pointer;
+}
+
+.modal {
+  position: fixed; /* фикисрованная позиция поверх всего сайта */
+  left: 0; /* к левому краю */
+  top: 0; /* приклеиваем к верху */
+  width: 100%;
+  height: 100%; /* окно занимает всю страницу целиком */
+  background-color: rgba(0, 0, 0, 0.8); /* полупрозрачный фоновый чёрный цвет*/
+  display: flex; /* родительский элемент - гибкий */
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* сделать окно прозрачным */
+  transform: scale(0); /* окно сожмётся в ноль (его не будет видно) */
+  transition: opacity 0.2s; /*плавность: окно будет появляться плавно в течение 0,2 секунд*/
+}
+
+/* чтобы окно появилось, ему присваивается класс */
+.is-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-dialog {
+  position: relative;
+  max-width: 1000px;
+  min-height: 565px;
+  background-color: #fff;
+  flex-grow: 1;
+  display: flex;
+  transform: translateY(-10%); /* отодвинем на 10% вверх */
+  transition: transform 0.2s, opacity 0.2s; /* плавность */
+  transition-delay: 0.2s; /* задержка: сначала появляется только подложка, а затем модальное окно */
+}
+
+.is-open > .modal-dialog {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modal-image {
+  background-color: #ebebeb;
+  width: 60%;
+  text-align: center; /* весь текст по центру */
+  padding: 50px;
+}
+
+.flats path {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.flats path:hover {
+  opacity: 1;
+}
+
+.modal-title {
+  font-family: "Bebas Neue Book", sans-serif;
+  font-weight: normal;
+  font-style: 24px;
+  line-height: 24px;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.modal-info {
+  width: 40%;
+  padding: 50px 46px;
+}
+
+.flat-list {
+  padding: 0;
+  list-style: none;
+  margin-top: 55px;
+}
+
+.flat-item {
+  margin-bottom: 10px;
+}
+
+.flat-link {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #635854;
+  text-decoration: none;
+}
+
+.flat-link:hover {
+  text-decoration: underline;
+  color: #3596f5;
+}
+
+.modal-alert {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #635854;
+  margin-top: 56px;
+}
+
+.modal-close-button {
+  position: absolute;
+  right: 27px;
+  top: 38px;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
 }
